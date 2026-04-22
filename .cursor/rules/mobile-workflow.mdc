@@ -1,0 +1,15 @@
+---
+description: Mobile workflow and communication preferences
+alwaysApply: true
+---
+
+# Mobile App Collaboration Rule
+
+- Build in phases and wait for user confirmation before starting the next phase.
+- Explain updates in beginner format:
+  - What changed
+  - Why it changed
+  - How to verify
+- Prefer normal commands first.
+- Avoid force flags/options unless blocked and no safer option works.
+- Keep architecture clean and minimal; avoid unnecessary libraries.
