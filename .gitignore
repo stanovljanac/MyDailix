@@ -41,4 +41,7 @@ yarn-error.*
 /android
 
 # Cursor local planning artifacts
-.cursor/plans/
+.cursor
+
+# Plans
+/docs
