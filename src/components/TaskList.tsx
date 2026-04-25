@@ -17,7 +17,10 @@ export const TaskList = ({ tasks, onRemoveTask }: TaskListProps) => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <View style={styles.taskRow}>
-          <Text style={styles.taskTitle}>{item.title}</Text>
+          <View style={styles.taskContent}>
+            <Text style={styles.taskTitle}>{item.title}</Text>
+            {item.time ? <Text style={styles.taskMeta}>{item.time}</Text> : null}
+          </View>
           <TouchableOpacity onPress={() => onRemoveTask(item.id)}>
             <Text style={styles.remove}>Remove</Text>
           </TouchableOpacity>
@@ -30,7 +33,7 @@ export const TaskList = ({ tasks, onRemoveTask }: TaskListProps) => {
 
 const styles = StyleSheet.create({
   listContent: {
-    paddingBottom: 24,
+    paddingBottom: 12,
     gap: 8,
   },
   taskRow: {
@@ -47,6 +50,15 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
   },
+  taskContent: {
+    flex: 1,
+    gap: 4,
+  },
+  taskMeta: {
+    color: "#6b7280",
+    fontSize: 13,
+    fontWeight: "600",
+  },
   remove: {
     color: "#dc2626",
     fontWeight: "600",
@@ -54,6 +66,6 @@ const styles = StyleSheet.create({
   },
   empty: {
     color: "#6b7280",
-    marginTop: 8,
+    marginTop: 12,
   },
 });
